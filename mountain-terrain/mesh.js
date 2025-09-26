@@ -28,7 +28,7 @@ function updatePosition(){
         const x=position.getX(i);
         const y=position.getY(i);
         const z=noise2D(x/300, y/300)*50;
-        // 动态变化
+        // 动态变化 sinNum = sin( 时间 * 速度 + 空间偏移 ) * 振幅
         const sinNum = Math.sin(Date.now() * 0.002 + x * 0.05) * 10;
         position.setXYZ(i,x,y,z+sinNum);
     }
